@@ -12,6 +12,10 @@ function validate()
     document.getElementById("usernameError").classList.add("shown-message");
     //Turn the username items red
     document.getElementById("usernameGroup").classList.add("has-error");
+    else if(userEntered.split("") != 0)
+    {
+      document.getElementById("usernameError").innerHTML="User name can't contain spaces";
+    }
   } else if (userEntered.length >= 6)
   {
     document.getElementById("usernameError").innerHTML="Good username.";
@@ -35,6 +39,6 @@ function validate()
       document.getElementById("passwordError").innerHTML="Password can't be same as username";
   } else if (passEntered != userEntered)
   {
-
+    document.getElementById("passwordError").innerHTML="Good password";
   }
 }
